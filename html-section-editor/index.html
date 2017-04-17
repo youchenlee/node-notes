@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <style>
+        article-image, article-text {display: block;}
+    </style>
+
+    <body>
+        <article>
+            <article-image>
+                <img src="a.png" />
+            </article-image>
+            <article-text>
+                ABC
+                DEF
+            </article-text>
+            <article-image>
+                <img src="b.png" />
+            </article-image>
+            <article-text>
+                ZZZ
+                YYY
+            </article-text>
+        </article>
+
+        <hr />
+        <editor>
+        </editor>
+    </body>
+    <script>
+     var article = document.querySelector('article');
+     var editor = document.querySelector('editor');
+
+     article.childNodes.forEach(function (el) {
+         if (el.tagName == 'ARTICLE-TEXT') {
+             var div = document.createElement('div');
+             var textarea = document.createElement('textarea');
+             div.appendChild(textarea);
+             textarea.innerHTML = el.textContent;
+             editor.appendChild(div);
+         }
+
+         if (el.tagName == 'ARTICLE-IMAGE') {
+             var div = document.createElement('div');
+             div.innerHTML = "這是圖片編輯器";
+             editor.appendChild(div);
+         }
+     });
+    </script>
+</html>
