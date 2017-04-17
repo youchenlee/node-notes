@@ -2,7 +2,9 @@
   "dependencies": {
     "axios": "^0.16.1",
     "csv": "^1.1.1",
+    "express": "^4.15.2",
     "http-proxy": "^1.16.2",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "simplesmtp": "^0.3.35"
   }
 }
