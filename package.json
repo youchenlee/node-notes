@@ -4,6 +4,7 @@
     "csv": "^1.1.1",
     "express": "^4.15.2",
     "http-proxy": "^1.16.2",
+    "markov-respond": "github:unisharp/node-markov",
     "request": "^2.81.0",
     "simplesmtp": "^0.3.35",
     "uuid": "^3.0.1"
