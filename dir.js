@@ -1,6 +1,19 @@
 const fs = require('fs');
 
-var d = fs.readdirSync(__dirname + '/');
-d.forEach(function (f) {
-  console.log(f);
-});
+
+let readDir = function(dir) {
+  let files = fs.readdirSync(dir);
+  files.forEach(function (f) {
+    let path = `${dir}/${f}`;
+    if (fs.lstatSync(path).isDirectory()) {
+      console.log(`DIR: ${path}`)
+      readDir(path);
+    } else {
+      console.log(`FILE: ${path}`);
+    }
+  });
+}
+
+readDir(__dirname);
+
+
